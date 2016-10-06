@@ -8,3 +8,13 @@ Template: virtue
 Version: 1.0.1
 */
 
+
+/* full witdth blocks in limited width parents */
+.full-width {
+  width: 100vw;
+  position: relative;
+  left: 50%;
+  right: 50%;
+  margin-left: -50vw;
+  margin-right: -50vw;
+}
