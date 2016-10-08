@@ -28,42 +28,86 @@
     /**
     * 
     */
+    $height = 200;
     do_action( 'kadence_single_post_begin' ); 
     ?>
 <div id="content" class="container">
     <div class="row single-article" itemscope="" itemtype="http://schema.org/BlogPosting">
         <div class="main <?php echo esc_attr( kadence_main_class() ); ?>" role="main">
         <?php while (have_posts()) : the_post(); ?>
-            <article <?php post_class(); ?>><h1>There</h1>
+            <article <?php post_class(); ?>>
             <?php
              do_action( 'kadence_single_post_before' ); 
 
             if ($headcontent == 'flex') { ?>
                 <section class="postfeat">
-                    <div class="flexslider kad-light-wp-gallery loading kt-flexslider-thu »mb style="max-width:<?php echo esc_attr($slidewidth);?>px;" data-flex-speed="7000" data-flex-anim-speed="400" data-flex-animation="fade" data-flex-auto="true">
-                        <ul class="slides">
-                        <?php 
-                        $image_gallery = get_post_meta( $post->ID, '_kad_image_gallery', true );
-                        if(!empty($image_gallery)) {
-                            $attachments = array_filter( explode( ',', $image_gallery ) );
-                            if ($attachments) {
-                                foreach ($attachments as $attachment) {
-                                $attachment_src = wp_get_attachment_image_src($attachment , 'full');
-                                $caption = get_post($attachment)->post_excerpt;
-                                $image = aq_resize($attachment_src[0], null, $slideheight, false, false, false, $attachment);
-                                if(empty($image[0])) { $image = array($attachment_src[0], $attachment_src[1], $attachment_src[2]); }
 
-                                    echo '<li>';
-                                        echo '<a href="'.esc_url($attachment_src[0]).'" data-rel="lightbox">';
-                                            echo '<img src="'.esc_url($image[0]).'" width="'.esc_attr($image[1]).'" height="'.esc_attr($image[2]).'" alt="'.esc_attr($caption).'" '.kt_get_srcset_output($image[1], $image[2], $attachment_src[0], $attachment).' itemprop="image"/>';
-                                        echo '</a>';
-                                    echo '</li>';
-                                }
-                            }
-                        }
-                        ?>                            
-                        </ul>
-                    </div> <!--Flex Slides-->
+                    <?php  
+                    $itemsize = 'tcol-lg-4 tcol-md-4 tcol-sm-4 tcol-xs-6 tcol-ss-12';
+                    if (!empty($height)) {
+                        $imageHeight = $height; 
+                    } else {
+                        $imageHeight = 200;
+                    }
+                    $imageWidth = null;
+                    $md = 3;
+                    $sm = 3;
+                    $xs = 2;
+                    $ss = 1; ?>
+                    <div class="full-width fredcarousel carouFredSel-gallery" style="height: <?php echo $imageHeight.'px;';?>">
+                        <div id="carouselcontainer" class="rowtight fadein-carousel">
+                            <div id="portfolio-carouselw" class="clearfix caroufedselclass initcaroufedsel clearfix" 
+                                data-carousel-container="#carouselcontainer" data-carousel-transition="700" data-carousel-scroll="1" data-carousel-auto="true" data-carousel-speed="3000" data-carousel-id="portfolio" 
+                                data-carousel-md="<?php echo esc_attr($md);?>" data-carousel-sm="<?php echo esc_attr($sm);?>" data-carousel-xs="<?php echo esc_attr($xs);?>" data-carousel-ss="<?php echo esc_attr($ss);?>">
+                                <?php
+                                $image_gallery = get_post_meta( $post->ID, '_kad_image_gallery', true );
+                                if(!empty($image_gallery)) {
+                                    $attachments = array_filter( explode( ',', $image_gallery ) );
+                                    if ($attachments) {
+                                        foreach ($attachments as $attachment) {
+                                            $attachment_src = wp_get_attachment_image_src($attachment , 'full');
+                                            $caption = get_post($attachment)->post_excerpt;
+                                            $image = aq_resize($attachment_src[0], null, $imageHeight, false, false, false, $attachment);
+                                                if(empty($image[0])) { $image = array($attachment_src[0], $attachment_src[1], $attachment_src[2]); }
+                                            ?>
+                                            
+                                            <div class="<?php echo $itemsize; ?> kad_portfolio_item">
+                                                <div class="grid_item portfolio_item postclass">
+                        
+                                                    <div class="imghoverclass">
+                                                        <a href="<?php echo $attachment_src[0]; ?>" title="<?php esc_attr($caption); ?>" class="kad_portfolio_link" data-rel="lightbox">
+                                                            <img src="<?php echo esc_url($image[0]); ?>" alt="<?php esc_attr($caption); ?>" 
+                                                                height="100%" x-width="<?php echo esc_attr($image[1]);?>" x-height="<?php echo esc_attr($image[2]);?>" class="lightboxhover" style="display: block;"
+                                                                <?php echo kt_get_srcset_output($image[1], $image[2], $attachment_src[0], $attachment); ?>
+                                                            >
+                                                        </a> 
+                                                    </div>
+                        
+                                                    <?php if(!empty($caption)) { ?>
+                                                        <a href="<?esc_url($attachment_src[0]) ?>" class="portfoliolink" data-rel="lightbox">
+                                                            <div class="piteminfo">   
+                                                                <h5><?php echo  $caption;?></h5>
+                                                                <?php if($portfolio_item_types == 1) { $terms = get_the_terms( $post->ID, 'portfolio-type' ); if ($terms) {?> 
+                                                                    <p class="cportfoliotag"><?php $output = array(); foreach($terms as $term){ $output[] = $term->name;} echo implode(', ', $output); ?></p> 
+                                                                <?php } } ?>
+                                                            </div>
+                                                        </a>
+                                                    <?php } ?>
+                        
+                                                </div>
+                                            </div>
+                                        <?php } ?>                    
+                                    <?php } ?>                    
+                                <?php } ?>                    
+
+                            
+                            </div>
+                        </div>
+                        <div class="clearfix"></div>
+                        <a id="prevport-portfolio" class="prev_carousel icon-chevron-left" href="#"></a>
+                        <a id="nextport-portfolio" class="next_carousel icon-chevron-right" href="#"></a>
+                    </div> <!-- fred Carousel-->
+                        
                 </section>
             <?php } else if ($headcontent == 'video') { ?>
                 <section class="postfeat">
@@ -137,3 +181,12 @@
         </div>
         <?php 
         do_action( 'kadence_single_post_end' ); 
+?>
+
+/* add */      
+
+<div class="home-portfolio home-margin carousel_outerrim home-padding">
+
+   
+            
+    </div> <!--featclass -->

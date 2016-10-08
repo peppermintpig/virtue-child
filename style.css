@@ -10,6 +10,7 @@ Version: 1.0.1
 
 
 /* full witdth blocks in limited width parents */
+
 .full-width {
   width: 100vw;
   position: relative;
@@ -18,3 +19,13 @@ Version: 1.0.1
   margin-left: -50vw;
   margin-right: -50vw;
 }
+
+/* end of full witdth blocks in limited width parents */
+
+/* avoid fouc of unitialized carousel */
+
+.fredcarousel {
+    overflow: hidden;
+}
+
+/* end of avoid fouc of unitialized carousel */
