@@ -5,12 +5,12 @@ Description: Child Theme for Virtue
 Author: Kadence Themes
 Author URI: http://kadencethemes.com/
 Template: virtue
-Version: 1.0.1
+Version: 1.0.2
 GitHub Theme URI: https://github.com/peppermintpig/virtue-child
 */
 
 
-/* full witdth blocks in limited width parents */
+/* full width blocks in limited width parents */
 
 .full-width {
   width: 100vw;
@@ -21,7 +21,7 @@ GitHub Theme URI: https://github.com/peppermintpig/virtue-child
   margin-right: -50vw;
 }
 
-/* end of full witdth blocks in limited width parents */
+/* end of full width blocks in limited width parents */
 
 /* avoid fouc of unitialized carousel */
 
