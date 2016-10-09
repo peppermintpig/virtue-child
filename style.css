@@ -29,3 +29,38 @@ Version: 1.0.1
 }
 
 /* end of avoid fouc of unitialized carousel */
+
+/* image carousel */
+
+.carousel-item {
+    height: 100%;
+    width: auto;
+    display: block;
+    float: left;
+    padding: 0 1rem;
+}
+
+/* end of image carousel */
+
+/* full-width image carousel */
+
+.full-width.slick-slider-wrapper {
+    padding: 0 30px;
+}
+.full-width.slick-slider-wrapper .slick-list {
+    overflow: hidden;
+}
+
+.full-width.slick-slider-wrapper .slick-next {
+    right: 0.8rem;
+}
+
+.full-width.slick-slider-wrapper .slick-prev {
+    left: 1rem;    
+}
+
+.full-width.slick-slider-wrapper .slick-prev::before, .full-width.slick-slider-wrapper .slick-next::before {
+    color: #444;
+}
+
+/* end of full-width image carousel */
