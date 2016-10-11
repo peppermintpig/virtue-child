@@ -132,7 +132,27 @@
                   */
                   do_action( 'kadence_single_post_before_header' );
                   ?>
+
+                <div class="presence">
+                    <div class="postdate">
+                        <?php 
+                        $days = array("Samedi", "Dimanche");
+                        $presences =  bdr_get_auteur_presence($days);
+                        foreach($days as $day) {
+                            $term =get_term_by( 'name', $day, 'category' );
+                            $term_link = get_category_link( $term );
+                            if ($presences[$day]) { ?>
+                                <a class="btn btn-lg btn-primary" href="<?php echo $term_link ?>" role="button"><?php echo $day ?></a><?php
+                            } else { ?>
+                                <a class="btn btn-lg btn-default" href="<?php echo $term_link ?>" role="button"><?php echo $day ?></a><?php
+                            }
+                        }
+                        ?>
+                    </div>
+                </div>
+                  
                 <header>
+
                     <?php 
                     /**
                     * @hooked virtue_post_header_title - 20
@@ -140,8 +160,9 @@
                     */
                     do_action( 'kadence_single_post_header' );
                     ?>
-                </header>
 
+               </header>
+ 
                 <div class="entry-content" itemprop="description articleBody">
                     <?php
                     do_action( 'kadence_single_post_content_before' );

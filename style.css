@@ -65,3 +65,15 @@ GitHub Theme URI: https://github.com/peppermintpig/virtue-child
 }
 
 /* end of full-width image carousel */
+
+/* author page */
+
+.category-auteurs .postmeta, .category-auteurs .subhead {
+    display: none;
+}
+
+.presence .btn {
+    margin-left: 5px;
+}
+
+/* end of author page */
