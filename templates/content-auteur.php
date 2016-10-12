@@ -54,7 +54,8 @@
                     $sm = 3;
                     $xs = 2;
                     $ss = 1; ?>
-                    <div class="full-width slick-slider-wrapper" style="height: <?php echo $imageHeight.'px;';?>">
+                
+                <div class=" full-width slick-slider-wrapper" style="height: <?php echo $imageHeight.'px;';?>">
                         <div id="x-portfolio-carousel" class="clearfix imageGallerySlider fadein-carousel clearfix" 
                             data-carousel-container="#carouselcontainer" data-carousel-transition="700" data-carousel-scroll="1" data-carousel-auto="true" data-carousel-speed="3000" data-carousel-id="portfolio" 
                             data-carousel-md="<?php echo esc_attr($md);?>" data-carousel-sm="<?php echo esc_attr($sm);?>" data-carousel-xs="<?php echo esc_attr($xs);?>" data-carousel-ss="<?php echo esc_attr($ss);?>">
@@ -70,14 +71,13 @@
                                             if(empty($image[0])) { $image = array($attachment_src[0], $attachment_src[1], $attachment_src[2]); }
                                         ?>
                                         
-                                        <!--<div class="<?php echo $itemsize; ?> kad_portfolio_item">-->
-                                        <div class="carousel-item" width="<?php echo esc_attr($image[1]);?>" height="<?php echo esc_attr($image[2]);?>" >
-                                            <div class="grid_item portfolio_item postclass">
+                                        <div class="carousel-item" style=" width: <?php echo esc_attr($image[1]);?>px; height: <?php echo esc_attr($image[2]);?>px; ">
+                                            <div class="portfolio_item postclass">
                     
                                                 <div class="imghoverclass">
                                                     <a href="<?php echo $attachment_src[0]; ?>" title="<?php esc_attr($caption); ?>" class="kad_portfolio_link" data-rel="lightbox">
                                                         <img src="<?php echo esc_url($image[0]); ?>" alt="<?php esc_attr($caption); ?>" 
-                                                            x-height="100%" width="<?php echo esc_attr($image[1]);?>" height="<?php echo esc_attr($image[2]);?>" class="lightboxhover" style="display: block;"
+                                                            class="lightboxhover" 
                                                             <?php echo kt_get_srcset_output($image[1], $image[2], $attachment_src[0], $attachment); ?>
                                                         >
                                                     </a> 

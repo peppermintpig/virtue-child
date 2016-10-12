@@ -2,17 +2,17 @@
 jQuery(document).ready(function ($) {    
 
     //init carousel
-    jQuery('.carouFredSel-gallery2').each(function(){
+    jQuery(".carouFredSel-gallery2").each(function(){
         var container = jQuery(this);
-        var wcontainerclass = container.data('carousel-container'), 
-        cspeed = container.data('carousel-speed'), 
-        ctransition = container.data('carousel-transition'),
-        cauto = container.data('carousel-auto'),
-        carouselid = container.data('carousel-id'),
-        ss = container.data('carousel-ss'), 
-        xs = container.data('carousel-xs'),
-        sm = container.data('carousel-sm'),
-        md = container.data('carousel-md');
+        var wcontainerclass = container.data("carousel-container"), 
+        cspeed = container.data("carousel-speed"), 
+        ctransition = container.data("carousel-transition"),
+        cauto = container.data("carousel-auto"),
+        carouselid = container.data("carousel-id"),
+        ss = container.data("carousel-ss"), 
+        xs = container.data("carousel-xs"),
+        sm = container.data("carousel-sm"),
+        md = container.data("carousel-md");
         var wcontainer = jQuery(wcontainerclass);
         function getUnitWidth() {
             var width;
@@ -30,7 +30,7 @@ jQuery(document).ready(function ($) {
 
         function setWidths() {
             var unitWidth = getUnitWidth() -1;
-            //container.children().css({ width: 'auto' });
+            //container.children().css({ width: "auto" });
         }
         
         //setWidths();
@@ -46,8 +46,8 @@ jQuery(document).ready(function ($) {
                     play: cauto, 
                     timeoutDuration: cspeed
                 },
-                prev: '#prevport-'+carouselid, 
-                next: '#nextport-'+carouselid, 
+                prev: "#prevport-"+carouselid, 
+                next: "#nextport-"+carouselid, 
                 pagination: false, 
                 swipe: true, 
                 items: {visible: null}
@@ -56,7 +56,7 @@ jQuery(document).ready(function ($) {
         container.kt_imagesLoaded( function(){
             initCarousel();
         });
-        wcontainer.animate({'opacity' : 1});
+        wcontainer.animate({"opacity" : 1});
         jQuery(window).on("debouncedresize", function( event ) {
             container.trigger("destroy");
             //setWidths();
@@ -64,38 +64,47 @@ jQuery(document).ready(function ($) {
         });
     });
     
-    jQuery('.imageGallerySlider').each(function() {
+    jQuery(".imageGallerySlider").each(function() {
         var container = jQuery(this);
        
-        cspeed = container.data('carousel-speed'), 
-        ctransition = container.data('carousel-transition'),
-        cauto = container.data('carousel-auto') == '0',
-        carouselid = container.data('carousel-id'),
-        ss = container.data('carousel-ss'), 
-        xs = container.data('carousel-xs'),
-        sm = container.data('carousel-sm'),
-        md = container.data('carousel-md');
+        var cspeed = container.data("carousel-speed");
+        var ctransition = container.data("carousel-transition");
+        var cauto = !container.data("carousel-auto") == "0";
+        var carouselid = container.data("carousel-id");
+        var ss = container.data("carousel-ss");
+        var xs = container.data("carousel-xs");
+        var sm = container.data("carousel-sm");
+        var md = container.data("carousel-md");
         
         function initCarousel() {
             container.slick({
-                dots: false,
+                /*
                 infinite: true,
                 slidesToShow: 1,
                 centerMode: true,
-                centerPadding: '0px',
-                variableWidth: true,
+                centerPadding: "40px",
                 autoplay: cauto,
                 autoplaySpeed: cspeed,
                 speed: ctransition}
-            );
+                */
+                dots: false,
+                method: {},
+                autoplay: cauto,
+                autoplaySpeed: cspeed,
+                infinite: true,
+                speed: 900,
+                slidesToShow: 1,
+                centerMode: false,
+                variableWidth: true
+            });
         };
 
         container.kt_imagesLoaded( function(){
             initCarousel();
         });
         
-        container.on('init', function(event, slick) {
-            container.animate({'opacity' : 1});
+        container.on("init", function(event, slick) {
+            container.animate({"opacity" : 1});
         });
 
     });

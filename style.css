@@ -5,7 +5,7 @@ Description: Child Theme for Virtue
 Author: Kadence Themes
 Author URI: http://kadencethemes.com/
 Template: virtue
-Version: 1.0.3
+Version: 1.0.4
 GitHub Theme URI: https://github.com/peppermintpig/virtue-child
 */
 
@@ -34,12 +34,17 @@ GitHub Theme URI: https://github.com/peppermintpig/virtue-child
 /* image carousel */
 
 .carousel-item {
-    height: 100%;
-    width: auto;
-    display: block;
-    float: left;
-    padding: 0 1rem;
+    margin: 0 10px;
 }
+
+.slick-prev::before, .slick-next::before {
+    color: #444;
+}
+
+.carousel-item img {
+    max-width: none;
+}
+
 
 /* end of image carousel */
 
@@ -53,11 +58,11 @@ GitHub Theme URI: https://github.com/peppermintpig/virtue-child
 }
 
 .full-width.slick-slider-wrapper .slick-next {
-    right: 0.8rem;
+    right: -22px;
 }
 
 .full-width.slick-slider-wrapper .slick-prev {
-    left: 1rem;    
+    left: -22px;
 }
 
 .full-width.slick-slider-wrapper .slick-prev::before, .full-width.slick-slider-wrapper .slick-next::before {
@@ -80,7 +85,7 @@ GitHub Theme URI: https://github.com/peppermintpig/virtue-child
 }
 
 .presence .btn.btn-primary {
-        color: #fff;
+    color: #fff;
 }
 
 /* end of author page */
