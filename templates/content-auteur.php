@@ -15,21 +15,21 @@
           }
       }
       if (!empty($height)) {
-        $slideheight = $height; 
+        $slideheight = $height;
       } else {
         $slideheight = 400;
       }
       if (!empty($swidth)) {
-        $slidewidth = $swidth; 
+        $slidewidth = $swidth;
       } else {
         $slidewidth = $slide_sidebar;
-      } 
+      }
 
     /**
-    * 
+    *
     */
     $height = 200;
-    do_action( 'kadence_single_post_begin' ); 
+    do_action( 'kadence_single_post_begin' );
     ?>
 <div id="content" class="container">
     <div class="row single-article" itemscope="" itemtype="http://schema.org/BlogPosting">
@@ -37,15 +37,15 @@
         <?php while (have_posts()) : the_post(); ?>
             <article <?php post_class(); ?>>
             <?php
-             do_action( 'kadence_single_post_before' ); 
+             do_action( 'kadence_single_post_before' );
 
             if ($headcontent == 'flex') { ?>
                 <section class="postfeat">
 
-                    <?php  
+                    <?php
                     $itemsize = 'tcol-lg-4 tcol-md-4 tcol-sm-4 tcol-xs-6 tcol-ss-12';
                     if (!empty($height)) {
-                        $imageHeight = $height; 
+                        $imageHeight = $height;
                     } else {
                         $imageHeight = 200;
                     }
@@ -54,10 +54,10 @@
                     $sm = 3;
                     $xs = 2;
                     $ss = 1; ?>
-                
+
                 <div class=" full-width slick-slider-wrapper" style="height: <?php echo $imageHeight.'px;';?>">
-                        <div id="x-portfolio-carousel" class="clearfix imageGallerySlider fadein-carousel clearfix" 
-                            data-carousel-container="#carouselcontainer" data-carousel-transition="700" data-carousel-scroll="1" data-carousel-auto="true" data-carousel-speed="3000" data-carousel-id="portfolio" 
+                        <div id="x-portfolio-carousel" class="clearfix imageGallerySlider fadein-carousel clearfix"
+                            data-carousel-container="#carouselcontainer" data-carousel-transition="700" data-carousel-scroll="1" data-carousel-auto="true" data-carousel-speed="3000" data-carousel-id="portfolio"
                             data-carousel-md="<?php echo esc_attr($md);?>" data-carousel-sm="<?php echo esc_attr($sm);?>" data-carousel-xs="<?php echo esc_attr($xs);?>" data-carousel-ss="<?php echo esc_attr($ss);?>">
                             <?php
                             $image_gallery = get_post_meta( $post->ID, '_kad_image_gallery', true );
@@ -70,39 +70,39 @@
                                         $image = aq_resize($attachment_src[0], null, $imageHeight, false, false, false, $attachment);
                                             if(empty($image[0])) { $image = array($attachment_src[0], $attachment_src[1], $attachment_src[2]); }
                                         ?>
-                                        
+
                                         <div class="carousel-item" style=" width: <?php echo esc_attr($image[1]);?>px; height: <?php echo esc_attr($image[2]);?>px; ">
                                             <div class="portfolio_item postclass">
-                    
+
                                                 <div class="imghoverclass">
                                                     <a href="<?php echo $attachment_src[0]; ?>" title="<?php esc_attr($caption); ?>" class="kad_portfolio_link" data-rel="lightbox">
-                                                        <img src="<?php echo esc_url($image[0]); ?>" alt="<?php esc_attr($caption); ?>" 
-                                                            class="lightboxhover" 
+                                                        <img src="<?php echo esc_url($image[0]); ?>" alt="<?php esc_attr($caption); ?>"
+                                                            class="lightboxhover"
                                                             <?php echo kt_get_srcset_output($image[1], $image[2], $attachment_src[0], $attachment); ?>
                                                         >
-                                                    </a> 
+                                                    </a>
                                                 </div>
-                    
+
                                                 <?php if(!empty($caption)) { ?>
                                                     <a href="<?esc_url($attachment_src[0]) ?>" class="portfoliolink" data-rel="lightbox">
-                                                        <div class="piteminfo">   
+                                                        <div class="piteminfo">
                                                             <h5><?php echo  $caption;?></h5>
-                                                            <?php if($portfolio_item_types == 1) { $terms = get_the_terms( $post->ID, 'portfolio-type' ); if ($terms) {?> 
-                                                                <p class="cportfoliotag"><?php $output = array(); foreach($terms as $term){ $output[] = $term->name;} echo implode(', ', $output); ?></p> 
+                                                            <?php if($portfolio_item_types == 1) { $terms = get_the_terms( $post->ID, 'portfolio-type' ); if ($terms) {?>
+                                                                <p class="cportfoliotag"><?php $output = array(); foreach($terms as $term){ $output[] = $term->name;} echo implode(', ', $output); ?></p>
                                                             <?php } } ?>
                                                         </div>
                                                     </a>
                                                 <?php } ?>
-                    
+
                                             </div>
                                         </div>
-                                    <?php } ?>                    
-                                <?php } ?>                    
-                            <?php } ?>                    
+                                    <?php } ?>
+                                <?php } ?>
+                            <?php } ?>
 
                         </div>
-                    </div> 
-                        
+                    </div>
+
                 </section>
             <?php } else if ($headcontent == 'video') { ?>
                 <section class="postfeat">
@@ -111,7 +111,7 @@
                     </div>
                 </section>
             <?php } else if ($headcontent == 'image') {
-                    if (has_post_thumbnail( $post->ID ) ) {        
+                    if (has_post_thumbnail( $post->ID ) ) {
                         $image_id = get_post_thumbnail_id();
                         $image_src = wp_get_attachment_image_src( $image_id, 'full' );
                         $image = aq_resize( $image_src[0], $slidewidth, $slideheight, true, false, false, $image_id); //resize & crop the image
@@ -123,7 +123,7 @@
                                 </a>
                             </div>
                         <?php
-                    } 
+                    }
             }  ?>
 
                 <?php
@@ -135,7 +135,7 @@
 
                 <div class="presence">
                     <div class="postdate">
-                        <?php 
+                        <?php
                         $days = array("Samedi", "Dimanche");
                         $presences =  bdr_get_auteur_presence($days);
                         foreach($days as $day) {
@@ -150,10 +150,10 @@
                         ?>
                     </div>
                 </div>
-                  
+
                 <header>
 
-                    <?php 
+                    <?php
                     /**
                     * @hooked virtue_post_header_title - 20
                     * @hooked virtue_post_header_meta - 30
@@ -162,19 +162,19 @@
                     ?>
 
                </header>
- 
+
                 <div class="entry-content" itemprop="description articleBody">
                     <?php
                     do_action( 'kadence_single_post_content_before' );
-                        
-                        the_content(); 
-                      
+
+                        the_content();
+
                     do_action( 'kadence_single_post_content_after' );
                     ?>
                 </div>
 
                 <footer class="single-footer">
-                <?php 
+                <?php
                   /**
                   * @hooked virtue_post_footer_pagination - 10
                   * @hooked virtue_post_footer_tags - 20
@@ -192,10 +192,9 @@
             * @hooked virtue_post_comments - 40
             */
             do_action( 'kadence_single_post_after' );
-            
+
             endwhile; ?>
         </div>
-        <?php 
-        do_action( 'kadence_single_post_end' ); 
+        <?php
+        do_action( 'kadence_single_post_end' );
 ?>
-

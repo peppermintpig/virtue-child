@@ -1,15 +1,15 @@
- 
-jQuery(document).ready(function ($) {    
+
+jQuery(document).ready(function ($) {
 
     //init carousel
     jQuery(".carouFredSel-gallery2").each(function(){
         var container = jQuery(this);
-        var wcontainerclass = container.data("carousel-container"), 
-        cspeed = container.data("carousel-speed"), 
+        var wcontainerclass = container.data("carousel-container"),
+        cspeed = container.data("carousel-speed"),
         ctransition = container.data("carousel-transition"),
         cauto = container.data("carousel-auto"),
         carouselid = container.data("carousel-id"),
-        ss = container.data("carousel-ss"), 
+        ss = container.data("carousel-ss"),
         xs = container.data("carousel-xs"),
         sm = container.data("carousel-sm"),
         md = container.data("carousel-md");
@@ -32,24 +32,24 @@ jQuery(document).ready(function ($) {
             var unitWidth = getUnitWidth() -1;
             //container.children().css({ width: "auto" });
         }
-        
+
         //setWidths();
         function initCarousel() {
             container.carouFredSel({
                 scroll: {
-                    items:1, 
-                    easing: "swing", 
-                    duration: ctransition, 
+                    items:1,
+                    easing: "swing",
+                    duration: ctransition,
                     pauseOnHover : true
-                }, 
+                },
                 auto: {
-                    play: cauto, 
+                    play: cauto,
                     timeoutDuration: cspeed
                 },
-                prev: "#prevport-"+carouselid, 
-                next: "#nextport-"+carouselid, 
-                pagination: false, 
-                swipe: true, 
+                prev: "#prevport-"+carouselid,
+                next: "#nextport-"+carouselid,
+                pagination: false,
+                swipe: true,
                 items: {visible: null}
             });
         }
@@ -63,10 +63,10 @@ jQuery(document).ready(function ($) {
             initCarousel();
         });
     });
-    
+
     jQuery(".imageGallerySlider").each(function() {
         var container = jQuery(this);
-       
+
         var cspeed = container.data("carousel-speed");
         var ctransition = container.data("carousel-transition");
         var cauto = !container.data("carousel-auto") == "0";
@@ -75,7 +75,7 @@ jQuery(document).ready(function ($) {
         var xs = container.data("carousel-xs");
         var sm = container.data("carousel-sm");
         var md = container.data("carousel-md");
-        
+
         function initCarousel() {
             container.slick({
                 /*
@@ -102,12 +102,55 @@ jQuery(document).ready(function ($) {
         container.kt_imagesLoaded( function(){
             initCarousel();
         });
-        
+
         container.on("init", function(event, slick) {
             container.animate({"opacity" : 1});
         });
 
     });
-        
 
-});
+    /* authoring menu */
+
+    jQuery('.authoring-menu').each(function() {
+        var menu = jQuery('nav', this);
+        var originalWrapper = jQuery('#wrapper');
+        originalWrapper.wrap( "<div id='pageWrapper'></div>" );
+        var wrapper = jQuery('#pageWrapper');
+        wrapper.prepend(menu);
+        wrapper.prepend('<div class="overlay">');
+
+        var hamburger = $('.hamburger'),
+            overlay = $('.overlay'),
+            isClosed = false;
+
+        originalWrapper.prepend(hamburger);
+        hamburger.click(function () {
+            hamburger_cross();
+        });
+
+        function hamburger_cross() {
+
+            if (isClosed == true) {
+              overlay.hide();
+              hamburger.removeClass('is-open');
+              hamburger.addClass('is-closed');
+              $('body').removeClass('full-height');
+              $('html').removeClass('full-height');
+              isClosed = false;
+            } else {
+              overlay.show();
+              hamburger.removeClass('is-closed');
+              hamburger.addClass('is-open');
+              $('body').addClass('full-height');
+              $('html').addClass('full-height');
+              isClosed = true;
+            }
+        }
+
+        $('[data-toggle="offcanvas"]').click(function () {
+              $('#pageWrapper').toggleClass('toggled');
+        });
+    });
+
+
+  });
