@@ -1,0 +1,23 @@
+/**/
+.content-block {
+    border:1px solid #eee;
+    padding:3px;
+    background:#ccc;
+    max-width:250px;
+    float:right;
+    text-align:center;
+}
+.content-block:after {
+    clear:both;
+}
+
+div.clearfix.wp-editor {
+    width: 100%;
+    height: 2px;
+    background-color: lightblue;
+}
+
+p.sources {
+    padding-left: 10px;
+    border-left: 1px solid #ccc;
+}

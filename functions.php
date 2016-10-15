@@ -4,6 +4,7 @@
 add_filter('body_class','bdr_add_category_to_single');
 
 add_action('wp_footer', 'bdr_add_authoring_menu');
+add_action( 'init', 'bdr_add_editor_styles' );
 
 wp_register_script( 'bdrumes-js', get_stylesheet_directory_uri().'/assets/js/bdrumes.js', 'jquery', "1.0", true);
 
@@ -253,3 +254,58 @@ function bdr_add_category_to_single($classes) {
   // return the $classes array
   return $classes;
 }
+
+/* Add custom stylesheet to editor */
+
+function bdr_add_editor_styles() {
+    add_editor_style( 'custom-editor-style.css' );
+}
+
+function bdr_mce_buttons_2( $buttons ) {
+	array_unshift( $buttons, 'styleselect' );
+	return $buttons;
+}
+// Register our callback to the appropriate filter
+add_filter( 'mce_buttons_2', 'bdr_mce_buttons_2' );
+
+
+/*
+* Callback function to filter the MCE settings
+*/
+
+
+
+function bdr_mce_before_init_insert_formats( $init_array ) {
+
+    // Define the style_formats array
+	$style_formats = array(
+        /*
+        * Each array child is a format with it's own settings
+        * Notice that each array has title, block, classes, and wrapper arguments
+        * Title is the label which will be visible in Formats menu
+        * Block defines whether it is a span, div, selector, or inline style
+        * Classes allows you to define CSS classes
+        * Wrapper whether or not to add a new block-level element around any selected elements
+        */
+		array(
+			'title' => 'Separateur',
+			'block' => 'div',
+			'classes' => 'clearfix wp-editor',
+			'wrapper' => true,
+
+		),
+		array(
+			'title' => 'Auteur: Sources',
+			'block' => 'p',
+			'classes' => 'sources',
+			'wrapper' => false,
+		)
+	);
+	// Insert the array, JSON ENCODED, into 'style_formats'
+	$init_array['style_formats'] = json_encode( $style_formats );
+
+	return $init_array;
+
+}
+// Attach callback to 'tiny_mce_before_init'
+add_filter( 'tiny_mce_before_init', 'bdr_mce_before_init_insert_formats' );
