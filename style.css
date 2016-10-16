@@ -404,3 +404,15 @@ p.sources {
 }
 
 /* end of content styles */
+
+
+/* Author lists hacks */
+
+body.samedi .portfolio_item .portfoliolink, body.dimanche .portfolio_item .portfoliolink, .portfolio_item .portfoliolink {
+    opacity: 1;
+    background-color: rgba(255, 255, 255, 0.8);
+}
+
+body.samedi .portfolio_item:hover .portfoliolink, body.dimanche .portfolio_item:hover .portfoliolink, .portfolio_item:hover .portfoliolink {
+    opacity: 0;
+}

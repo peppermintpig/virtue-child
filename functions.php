@@ -15,10 +15,13 @@ wp_register_style( 'slick-theme', '//cdn.jsdelivr.net/jquery.slick/1.6.0/slick-t
 wp_register_style( 'bootswatch-paper-css', 'https://maxcdn.bootstrapcdn.com/bootswatch/3.3.7/paper/bootstrap.min.css', array(), null);
 wp_register_script( 'bootstrap-js', 'https://bootswatch.com/bower_components/bootstrap/dist/js/bootstrap.min.js', array ('jquery', 'kadence_plugins'), "1.0", true );
 
+wp_register_script('isotope-js', '//npmcdn.com/isotope-layout@3/dist/isotope.pkgd.js', null, null, true);
+
 wp_enqueue_script( 'bdrumes-js' );
 wp_enqueue_script( 'slick-js' );
 wp_enqueue_style( 'slick-css' );
 wp_enqueue_style( 'slick-theme' );
+wp_enqueue_script( 'isotope-js' );
 
 /*wp_enqueue_style( 'bootswatch-paper-css' );*/
 
