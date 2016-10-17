@@ -167,7 +167,11 @@ jQuery(document).ready(function ($) {
         grid.before(filterButtons).addClass('in');
 
         grid.isotope({
-            temSelector: 'item-wrapper'
+            itemSelector: 'item-wrapper'
+        });
+
+        grid.imagesLoaded().progress( function() {
+            grid.isotope('layout');
         });
 
         var hash = location.hash.match(/^#?(.*)$/)[1];
