@@ -152,5 +152,46 @@ jQuery(document).ready(function ($) {
         });
     });
 
+    /* end of authoring menu */
 
-  });
+    /* isotope */
+
+    jQuery('#portfoliowrapper').each(function() {
+        var grid = jQuery(this);
+        var filterButtons = '<div class="btn-group filters-button-group" role="group" aria-label="Filrer la présence">' +
+                '<button type="button" class="btn btn-lg btn-default" data-filter="*" data-filter-name="Tous">Tous</button>' +
+                '<button type="button" class="btn btn-lg btn-default" data-filter=".cat-samedi" data-filter-name="Samedi">Samedi</button>' +
+                '<button type="button" class="btn btn-lg btn-default" data-filter=".cat-dimanche" data-filter-name="Dimanche">Dimanche</button>' +
+            '</div>';
+
+        grid.before(filterButtons).addClass('in');
+
+        grid.isotope({
+            temSelector: 'item-wrapper'
+        });
+
+        var hash = location.hash.match(/^#?(.*)$/)[1];
+        if (hash == '')
+            hash = "Tous";
+        jQuery('.filters-button-group button').each(function(index, element) {
+            var button = jQuery(this);
+            var filter = jQuery(this).data('filter');
+            var filterName = jQuery(this).data('filterName');
+            button.click(function(event) {
+                event.stopPropagation();
+
+                grid.isotope({
+                    filter: filter
+                });
+                jQuery('button', button.parent()).removeClass('btn-primary');
+                button.addClass('btn-primary');
+                window.location.hash = filterName;
+                //return false;
+            });
+            if (filterName == hash) {
+                button.trigger('click');
+            }
+        });
+    });
+
+});

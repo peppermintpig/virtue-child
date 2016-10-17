@@ -77,7 +77,7 @@ Template Name: Auteur Grid
                	} else {
                		$plb = false;
                	}?>
-           		<div id="portfoliowrapper" class="rowtight">
+           		<div id="portfoliowrapper" class="rowtight fade ">
             <?php 	$paged = ( get_query_var( 'paged' ) ) ? get_query_var( 'paged' ) : 1;
 					$temp = $wp_query;
 					$wp_query = null;
@@ -106,11 +106,11 @@ Template Name: Auteur Grid
 					if ( $wp_query ) :
 					while ( $wp_query->have_posts() ) : $wp_query->the_post(); ?>
 						<?php
-						$cats = $terms = get_the_terms( $post->ID, 'category' );
+						$cats = get_the_terms( $post->ID, 'category' );
 						$classes = array();
 						foreach ($cats as $cat) { $classes[] = "cat-".$cat->slug; };
 						?>
-                	<div class="<?php echo esc_attr($itemsize);?> all kad_portfolio_fade_in <?php echo implode(' ', $classes); ?>  ">
+                	<div class="<?php echo esc_attr($itemsize); echo ' slug-' + $portfolio_cat_slug;?> all kad_portfolio_fade_in <?php echo implode(' ', $classes); ?> item-wrapper ">
                 		<div class="portfolio_item grid_item postclass">
 						<?php if (has_post_thumbnail( $post->ID ) ) {
 								$image_id = get_post_thumbnail_id( $post->ID);

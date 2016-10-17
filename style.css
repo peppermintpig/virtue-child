@@ -416,3 +416,15 @@ body.samedi .portfolio_item .portfoliolink, body.dimanche .portfolio_item .portf
 body.samedi .portfolio_item:hover .portfoliolink, body.dimanche .portfolio_item:hover .portfoliolink, .portfolio_item:hover .portfoliolink {
     opacity: 0;
 }
+
+.filters-button-group {
+    text-align: center;
+    margin: 15px 0;
+}
+
+.filters-button-group .btn {
+    margin: 0 5px;
+    width: 8em;
+}
+
+/* end of Author lists hacks */
