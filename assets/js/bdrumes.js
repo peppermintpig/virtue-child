@@ -167,7 +167,7 @@ jQuery(document).ready(function ($) {
         grid.before(filterButtons).addClass('in');
 
         grid.isotope({
-            itemSelector: 'item-wrapper'
+            temSelector: 'item-wrapper'
         });
 
         grid.imagesLoaded().progress( function() {
