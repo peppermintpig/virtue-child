@@ -1,12 +1,14 @@
 <?php
 // Add custom functions here
 
+$theme_version = wp_get_theme()->get('Version');
+
 add_filter('body_class','bdr_add_category_to_single');
 
 add_action('wp_footer', 'bdr_add_authoring_menu');
 add_action( 'init', 'bdr_add_editor_styles' );
 
-wp_register_script( 'bdrumes-js', get_stylesheet_directory_uri().'/assets/js/bdrumes.js', 'jquery', "1.0", true);
+wp_register_script( 'bdrumes-js', get_stylesheet_directory_uri().'/assets/js/bdrumes.js', 'jquery', $theme_version, true);
 
 wp_register_script( 'slick-js', '//cdn.jsdelivr.net/jquery.slick/1.6.0/slick.min.js', null, null, true);
 wp_register_style( 'slick-css', '//cdn.jsdelivr.net/jquery.slick/1.6.0/slick.css', array(), null);
