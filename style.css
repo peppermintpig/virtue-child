@@ -5,7 +5,7 @@ Description: Child Theme for Virtue
 Author: Kadence Themes
 Author URI: http://kadencethemes.com/
 Template: virtue
-Version: 1.0.13
+Version: 1.0.14
 GitHub Theme URI: https://github.com/peppermintpig/virtue-child
 */
 
@@ -458,5 +458,17 @@ body.samedi .portfolio_item:hover .portfoliolink, body.dimanche .portfolio_item:
         font-size: 48px;
       }
 }
+
+/* mobile light version */
+.flex-caption {
+    left: 40px;
+}
+
+@media screen and (max-width: 480px) {
+    .captiontitle {
+        font-size: 26px;
+    }
+}
+
 
 /*  end of Slider home page */
