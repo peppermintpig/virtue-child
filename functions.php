@@ -7,6 +7,8 @@ add_filter('body_class','bdr_add_category_to_single');
 
 add_action('wp_footer', 'bdr_add_authoring_menu');
 add_action( 'init', 'bdr_add_editor_styles' );
+add_action( 'init', 'bdr_add_missing_bootstrap' );
+
 
 wp_register_script( 'bdrumes-js', get_stylesheet_directory_uri().'/assets/js/bdrumes.js', 'jquery', $theme_version, true);
 
@@ -279,7 +281,6 @@ add_filter( 'mce_buttons_2', 'bdr_mce_buttons_2' );
 */
 
 
-
 function bdr_mce_before_init_insert_formats( $init_array ) {
 
     // Define the style_formats array
@@ -314,3 +315,27 @@ function bdr_mce_before_init_insert_formats( $init_array ) {
 }
 // Attach callback to 'tiny_mce_before_init'
 add_filter( 'tiny_mce_before_init', 'bdr_mce_before_init_insert_formats' );
+
+
+/*
+* End of Callback function to filter the MCE settings
+*/
+
+
+/*
+* add missing bootstrap stuff when logged-in
+*/
+
+function bdr_add_missing_bootstrap() {
+
+    if (current_user_can( 'edit_posts' )) {
+        wp_register_script( 'bootstrap-extra-js', get_stylesheet_directory_uri().'/assets/bootstrap-extra/js/bootstrap.min.js', 'jquery', $theme_version, true);
+        wp_register_style( 'bootstrap-extra-css', get_stylesheet_directory_uri().'/assets/bootstrap-extra/css/bootstrap.min.css', array(), null);
+        wp_enqueue_script( 'bootstrap-extra-js' );
+        wp_enqueue_style( 'bootstrap-extra-css' );
+    }
+}
+
+/*
+* add missing bootstrap stuff when logged-in
+*/
