@@ -5,7 +5,7 @@ Description: Child Theme for Virtue
 Author: Kadence Themes
 Author URI: http://kadencethemes.com/
 Template: virtue
-Version: 1.0.22
+Version: 1.0.23
 GitHub Theme URI: https://github.com/peppermintpig/virtue-child
 */
 
@@ -554,10 +554,17 @@ footer .gold #wp-sponsors img {
 
 #content #wp-sponsors .sponsor-item {
   font-size: 1.3rem;
+  margin: 0 0 20px 0;
 }
 
 #content #wp-sponsors .sponsor-item h3 {
   font-size: 2rem;
+  font-weight: 400;
+}
+
+#content #wp-sponsors .sponsor-item img {
+  display: block;
+  margin: 0 auto;
 }
 
 /* End of Sponsor styling */
@@ -567,3 +574,13 @@ footer .gold #wp-sponsors img {
 .widget_kadence_contact .vcard i {
     vertical-align: bottom;
 }
+
+a, #nav-main ul.sf-menu ul li a:hover, .product_price ins .amount, .price ins .amount,
+ .color_primary, .primary-color, #logo a.brand, #nav-main ul.sf-menu a:hover,
+ .a, #nav-main ul.sf-menu ul li a:hover, .product_price ins .amount, .price ins .amount,
+ .color_primary, .primary-color, #logo a.brand, #nav-main ul.sf-menu a:hover,
+ .woocommerce-message:before, .woocommerce-info:before, #nav-second ul.sf-menu a:hover,
+ .footerclass a:hover, .posttags a:hover, .subhead a:hover, .nav-trigger-case:hover .kad-menu-name,
+ .nav-trigger-case:hover .kad-navbtn, #kadbreadcrumbs a:hover, #wp-calendar a, .star-rating {
+     color: #428bca;;
+ }

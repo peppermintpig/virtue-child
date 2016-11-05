@@ -198,4 +198,25 @@ jQuery(document).ready(function ($) {
         });
     });
 
+    /* end of isotope */
+
+    /* sponsor masonry */
+
+    jQuery('#content #wp-sponsors').each(function() {
+        var grid = jQuery(this);
+
+        grid.masonry({
+            itemSelector: '.sponsor-item',
+        });
+
+        grid.imagesLoaded().progress( function() {
+            grid.masonry('layout');
+        });
+    });
+
+
+
+    /* end of sponsor masonry */
+
+
 });
