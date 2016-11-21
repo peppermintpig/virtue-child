@@ -5,7 +5,7 @@ Description: Child Theme for Virtue
 Author: Kadence Themes
 Author URI: http://kadencethemes.com/
 Template: virtue
-Version: 1.0.24
+Version: 1.0.25
 GitHub Theme URI: https://github.com/peppermintpig/virtue-child
 */
 
@@ -586,3 +586,62 @@ a, #nav-main ul.sf-menu ul li a:hover, .product_price ins .amount, .price ins .a
  .nav-trigger-case:hover .kad-navbtn, #kadbreadcrumbs a:hover, #wp-calendar a, .star-rating {
      color: #428bca;;
  }
+
+/* end of fix theme bugs */
+
+/* home page poster styling */
+
+.non-mobile.homepromo .home-iconmenu:last-child {
+    margin-bottom: 30px;
+}
+
+.non-mobile.homepromo::after {
+    padding-bottom: 400px;
+    background-attachment: fixed;
+    display: block;
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+    background-image: url(assets/images/Dillies-Illustration-480w.jpg);
+    background-size: cover;
+    margin-left: 10px;
+    margin-right: 10px;
+    margin-bottom: -10px;
+    max-width: 1200px;
+}
+
+
+@media (min-width: 480px) {
+    .non-mobile.homepromo::after {
+        background-image: url(assets/images/Dillies-Illustration-750w.jpg);
+        background-size: cover;
+    }
+}
+
+@media (min-width: 768px) {
+    .non-mobile.homepromo::after {
+        background-image: url(assets/images/Dillies-Illustration-1170w.jpg);
+        background-size: cover;
+    }
+}
+
+@media (min-width: 992px) {
+    .non-mobile.homepromo::after {
+        background-image: url(assets/images/Dillies-Illustration-1170w.jpg);
+        background-size: auto;
+    }
+}
+
+.poster {
+    background-image: url(assets/images/Dillies-Illustration-480w-mobile.jpg);
+    margin: 30px -10px 0 -10px;
+}
+
+@media (min-width: 480px) {
+    .poster {
+        background-image: url(assets/images/Dillies-Illustration-750w-mobile.jpg);
+    }
+}
+
+.mobile.homepromo {
+    margin-bottom: -20px;
+}

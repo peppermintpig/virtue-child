@@ -214,9 +214,19 @@ jQuery(document).ready(function ($) {
         });
     });
 
-
-
     /* end of sponsor masonry */
 
+    /* home page poster */
+
+    if( isMobile.any() ) {
+        jQuery('.homepromo').addClass('mobile').append('<div class="poster"/>');
+        var imageUrl = jQuery('.poster').css('background-image').replace(/^url\((.*?)\)$/, '$1');
+        jQuery('.poster').append('<img src=' + imageUrl + ' class="size-full wp-image aligncenter">')
+        jQuery('.poster').css('background-image', 'none');
+    } else {
+        jQuery('.homepromo').addClass('non-mobile');
+    };
+
+    /* end of home page poster */
 
 });
