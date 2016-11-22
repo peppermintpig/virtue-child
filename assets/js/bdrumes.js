@@ -218,7 +218,7 @@ jQuery(document).ready(function ($) {
 
     /* home page poster */
 
-    if( isMobile.any() ) {
+    if( typeof isMobile != 'undefined' && isMobile.any() ) {
         jQuery('.homepromo').addClass('mobile').append('<div class="poster"/>');
         var imageUrl = jQuery('.poster').css('background-image').replace(/^url\((.*?)\)$/, '$1');
         jQuery('.poster').append('<img src=' + imageUrl + ' class="size-full wp-image aligncenter">')
