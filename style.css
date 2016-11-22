@@ -5,7 +5,7 @@ Description: Child Theme for Virtue
 Author: Kadence Themes
 Author URI: http://kadencethemes.com/
 Template: virtue
-Version: 1.0.26
+Version: 1.0.27
 GitHub Theme URI: https://github.com/peppermintpig/virtue-child
 */
 
@@ -649,4 +649,20 @@ a, #nav-main ul.sf-menu ul li a:hover, .product_price ins .amount, .price ins .a
 
 .mobile.homepromo {
     margin-bottom: -20px;
+}
+
+/* home page poster styling */
+
+/* tabs, accordion styling */
+
+.nav-tabs>li {
+    border-bottom: 3px solid #ddd;
+}
+
+.nav-tabs>li.active {
+    border-bottom: 3px solid #2d5c88;
+}
+
+.panel-heading {
+    padding: 0;
 }
