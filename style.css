@@ -606,7 +606,7 @@ a, #nav-main ul.sf-menu ul li a:hover, .product_price ins .amount, .price ins .a
     display: block;
     background-repeat: no-repeat;
     background-position: 50% 50%;
-    background-image: url(assets/images/Dillies-Illustration-480w.jpg);
+    background-image: url(assets/images/Marko-Illustration-480w.jpg);
     background-size: cover;
     margin-left: 10px;
     margin-right: 10px;
@@ -617,33 +617,33 @@ a, #nav-main ul.sf-menu ul li a:hover, .product_price ins .amount, .price ins .a
 
 @media (min-width: 480px) {
     .non-mobile.homepromo::after {
-        background-image: url(assets/images/Dillies-Illustration-750w.jpg);
+        background-image: url(assets/images/Marko-Illustration-750w.jpg);
         background-size: cover;
     }
 }
 
 @media (min-width: 768px) {
     .non-mobile.homepromo::after {
-        background-image: url(assets/images/Dillies-Illustration-1170w.jpg);
+        background-image: url(assets/images/Marko-Illustration-1170w.jpg);
         background-size: cover;
     }
 }
 
 @media (min-width: 992px) {
     .non-mobile.homepromo::after {
-        background-image: url(assets/images/Dillies-Illustration-1170w.jpg);
+        background-image: url(assets/images/Marko-Illustration-1170w.jpg);
         background-size: auto;
     }
 }
 
 .poster {
-    background-image: url(assets/images/Dillies-Illustration-480w-mobile.jpg);
+    background-image: url(assets/images/Marko-Illustration-480w-mobile.jpg);
     margin: 30px -10px 0 -10px;
 }
 
 @media (min-width: 480px) {
     .poster {
-        background-image: url(assets/images/Dillies-Illustration-750w-mobile.jpg);
+        background-image: url(assets/images/Marko-Illustration-750w-mobile.jpg);
     }
 }
 
