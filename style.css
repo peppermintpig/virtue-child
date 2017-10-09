@@ -5,7 +5,7 @@ Description: Child Theme for Virtue
 Author: Kadence Themes
 Author URI: http://kadencethemes.com/
 Template: virtue
-Version: 1.0.27
+Version: 1.0.28
 GitHub Theme URI: https://github.com/peppermintpig/virtue-child
 */
 
@@ -643,7 +643,7 @@ a, #nav-main ul.sf-menu ul li a:hover, .product_price ins .amount, .price ins .a
 
 @media (min-width: 480px) {
     .poster {
-        background-image: url(assets/images/Marko-Illustration-750w-mobile.jpg);
+        background-image: url(assets/images/marko-Illustration-750w-mobile.jpg);
     }
 }
 
