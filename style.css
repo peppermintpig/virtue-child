@@ -665,3 +665,7 @@ a, #nav-main ul.sf-menu ul li a:hover, .product_price ins .amount, .price ins .a
 .panel-heading {
     padding: 0;
 }
+
+#logo {
+    padding-top: 10px;
+}
