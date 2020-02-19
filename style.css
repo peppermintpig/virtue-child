@@ -5,7 +5,7 @@ Description: Child Theme for Virtue
 Author: Kadence Themes
 Author URI: http://kadencethemes.com/
 Template: virtue
-Version: 1.0.31
+Version: 1.0.33
 GitHub Theme URI: https://github.com/peppermintpig/virtue-child
 */
 
@@ -669,3 +669,44 @@ a, #nav-main ul.sf-menu ul li a:hover, .product_price ins .amount, .price ins .a
 #logo {
     padding-top: 10px;
 }
+
+@media (max-width: 991px) {
+    .kad-header-left {
+        width: 50%;
+    }
+    
+    .kad-navbtn i.icon-reorder {
+        line-height: 50px;
+    }
+}
+
+@media (max-width: 767px) {
+    .kad-header-left {
+        width: auto;
+    }
+
+    header #thelogo {
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    header #logo {
+        text-align: center;
+    }
+
+    header #logo img {
+        max-height: 100px;
+    }
+}
+
+/* Primary color */
+.home-message:hover {background-color:#2d5c88; background-color: rgba(45, 92, 136, 0.6);}
+nav.woocommerce-pagination ul li a:hover, .wp-pagenavi a:hover, .panel-heading .accordion-toggle, .variations .kad_radio_variations label:hover, .variations .kad_radio_variations label.selectedValue {border-color: #2d5c88;}
+a, #nav-main ul.sf-menu ul li a:hover, .product_price ins .amount, .price ins .amount, .color_primary, .primary-color, #logo a.brand, #nav-main ul.sf-menu a:hover,
+.woocommerce-message:before, .woocommerce-info:before, #nav-second ul.sf-menu a:hover, .footerclass a:hover, .posttags a:hover, .subhead a:hover, .nav-trigger-case:hover .kad-menu-name, 
+  .nav-trigger-case:hover .kad-navbtn, #kadbreadcrumbs a:hover, #wp-calendar a, .star-rating {color: #2d5c88;}
+.widget_price_filter .ui-slider .ui-slider-handle, .product_item .kad_add_to_cart:hover, .product_item:hover a.button:hover, .product_item:hover .kad_add_to_cart:hover, .kad-btn-primary, html .woocommerce-page .widget_layered_nav ul.yith-wcan-label li a:hover, html .woocommerce-page .widget_layered_nav ul.yith-wcan-label li.chosen a,
+.product-category.grid_item a:hover h5, .woocommerce-message .button, .widget_layered_nav_filters ul li a, .widget_layered_nav ul li.chosen a, .wpcf7 input.wpcf7-submit, .yith-wcan .yith-wcan-reset-navigation,
+#containerfooter .menu li a:hover, .bg_primary, .portfolionav a:hover, .home-iconmenu a:hover, p.demo_store, .topclass, #commentform .form-submit #submit, .kad-hover-bg-primary:hover, .widget_shopping_cart_content .checkout,
+.login .form-row .button, .kad-post-navigation .kad-previous-link a:hover, .cart_totals .checkout-button, .wpcf7 input.wpcf7-back,
+.kad-post-navigation .kad-next-link a:hover, .variations .kad_radio_variations label.selectedValue, #payment #place_order, .shop_table .actions input[type=submit].checkout-button, input[type="submit"].button, .order-actions .button {background: #2d5c88;}
