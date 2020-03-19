@@ -5,7 +5,7 @@ Description: Child Theme for Virtue
 Author: Kadence Themes
 Author URI: http://kadencethemes.com/
 Template: virtue
-Version: 1.0.33
+Version: 1.0.34
 GitHub Theme URI: https://github.com/peppermintpig/virtue-child
 */
 
@@ -710,3 +710,51 @@ a, #nav-main ul.sf-menu ul li a:hover, .product_price ins .amount, .price ins .a
 #containerfooter .menu li a:hover, .bg_primary, .portfolionav a:hover, .home-iconmenu a:hover, p.demo_store, .topclass, #commentform .form-submit #submit, .kad-hover-bg-primary:hover, .widget_shopping_cart_content .checkout,
 .login .form-row .button, .kad-post-navigation .kad-previous-link a:hover, .cart_totals .checkout-button, .wpcf7 input.wpcf7-back,
 .kad-post-navigation .kad-next-link a:hover, .variations .kad_radio_variations label.selectedValue, #payment #place_order, .shop_table .actions input[type=submit].checkout-button, input[type="submit"].button, .order-actions .button {background: #2d5c88;}
+
+
+/* Popup... */
+
+.tbrightcontent {
+    font-size: 1em;
+}
+
+.tbrightcontent h3.termstitle {
+    background: #2d5c88;
+    font-size: 2em;
+    font-weight: bold;
+    padding: .2em;
+}
+
+.tbrightcontent .termscontentwrapper p {
+    font-size: 1.4em !important;
+    line-height: 150% !important;
+    margin-bottom: 1em;
+}
+
+.tthebutton .termsdecline {
+    display: none;
+}
+
+#wptp-form {
+    margin-top: 3em;
+}
+
+.tthebutton .termsagree {
+    font-size: 1.2em;
+    width: 10em;
+    color: #fff;
+    background-color: #428bca;
+    border-color: #357ebd;
+    display: inline-block;
+    padding: 6px 12px;
+    margin-bottom: 0;
+    font-weight: 400;
+    line-height: 1.42857143;
+    text-align: center;
+    vertical-align: middle;
+    cursor: pointer;
+    border: 1px solid transparent;
+    border-radius: 4px;
+    white-space: nowrap;
+    user-select: none;
+}
